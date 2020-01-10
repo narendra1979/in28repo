@@ -1,3 +1,5 @@
+/*
+
 create table person
 (
 	id integer not null,
@@ -6,6 +8,8 @@ create table person
 	birth_date timestamp,
 	primary key(id)
 );
+
+ */
 
 INSERT INTO PERSON (id,name,location,birth_date) 
 VALUES (10001,'Ranga','Hyderabd',sysdate);
