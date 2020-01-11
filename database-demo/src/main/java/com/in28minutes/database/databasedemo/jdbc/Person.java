@@ -9,6 +9,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name="find_all_persons", query="select p from Person p")
+@NamedQuery(name="find_person_by_name", query="select p from Person p where p.name=:name")
 public class Person {
 
 	@Id

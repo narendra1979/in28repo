@@ -5,10 +5,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Transactional
 public class PersonJpaRepository {
 	
 	@PersistenceContext
@@ -24,7 +26,10 @@ public class PersonJpaRepository {
 	}
 	
 	public Person findByName(String name) {
-		return entityManager.find(Person.class, name);
+		 TypedQuery<Person> createQuery = entityManager.createNamedQuery("find_person_by_name", Person.class);
+		 createQuery.setParameter("name", name);
+		 return createQuery.getSingleResult();
+		
 	}
 	
 	public void deleteById(int id) {

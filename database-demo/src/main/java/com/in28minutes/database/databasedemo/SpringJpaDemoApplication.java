@@ -28,11 +28,11 @@ public class SpringJpaDemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		//log.info("All Users :: {}"+ repository.findAll());
+		log.info("All Users :: {}"+ repository.findAll());
 		
-		//log.info("Get Person by Id :: {} "+ repository.findById(10002));
+		log.info("Get Person by Id :: {} "+ repository.findById(10002));
 		
-		//log.info("Get Person by name :: {} "+ repository.findByName("Peter"));
+		log.info("Get Person by name :: {} "+ repository.findByName("Peter"));
 		
 		log.info("Insert Person :: {} "+ repository.insertPerson(new Person("Ranga","Chennai",new Date())));
 		
